@@ -6,36 +6,34 @@ import './App.css';
 function App() {
   const [isHovering, setIsHovering] = useState(false);
   const [Toogle, setToogle] = useState(false);
+  const [Rand, setRand] = useState(0);
 
   const trial = {
   position:'relative',
-  left:"350px",
+  left:"0px",
   backgroundColor:"red"
   }
   const trial2 = {
     position:'relative',
-    right:"350px",
+    right:Rand+"px",
     backgroundColor:"red"
-    }
-  
+  }
   const handleMouseOver = (event) => {
-    
-    
     setIsHovering(true); 
-    event.target.classList.add('trial');
-    console.log(event.target)
+    setRand(Math.floor(Math.random() * (400 - 50 + 1) ) + 50);
+    console.log(Rand)
     setToogle(!Toogle)
   };
-  const handleMouseOut = () => {
-    setIsHovering(false);
-  };
+ // const handleMouseOut = () => {
+ //   setIsHovering(false);
+  //};
   return (
     <div className="App">
       <header className="App-header">
       <form>
       <div>
         <label>
-          <p>Vaglen</p>
+          
     Username:</label>
           <input type="text" name="username" />
         </div>
@@ -44,8 +42,8 @@ function App() {
     Password:</label>
           <input type="text" name="username" />
         </div>
-          <input style={Toogle ? trial :trial2 } onMouseEnter={handleMouseOver} onMouseLeave={handleMouseOut}  type="submit" value="Submit" />
-           {/*<button  style={Toogle ? trial :trial2 }  onMouseEnter={handleMouseOver} onMouseLeave={handleMouseOut} >Click Me</button> */}
+          <input style={trial2} onMouseEnter={handleMouseOver} /*onMouseLeave={handleMouseOut} */ type="submit" value="Submit" />
+
 </form>
       </header>
     </div>
