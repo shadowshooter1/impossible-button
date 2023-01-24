@@ -20,6 +20,7 @@ function App() {
   
   const handleMouseOver = (event) => {
     
+    
     setIsHovering(true); 
     event.target.classList.add('trial');
     console.log(event.target)
