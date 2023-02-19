@@ -6,16 +6,16 @@ import 'animate.css';
 
 function App() {
  
-  const [Rand, setRand] = useState(0);
+  const [Count, setCount] = useState(0);
   
   const but = {
-    position:Rand>0?'absolute':"relative",
-    top: Rand>0?`${Math.random() * 80}%` : "0px",
-    left:Rand>0?`${Math.random() * 80}%`: "0px"
+    position:Count>0?'absolute':"relative",
+    top: Count>0?`${Math.random() * 80}%` : "0px",
+    left:Count>0?`${Math.random() * 80}%`: "0px"
     }
 
   const handleMouseOver = (event) => {
-       setRand(Rand+1)
+       setCount(Count+1)
   };
   
   return (
@@ -34,7 +34,7 @@ function App() {
           <input type="text" name="username" />
         </div>
         <input style={but} className={"button "} onMouseEnter={handleMouseOver}  type="submit" value="Submit" />
-        {Rand>0? <div className="fakebutton"> Submit</div> : ""}
+        {Count>0? <div className="fakebutton"> Submit</div> : ""}
 </form>
       </header>
     </div>
