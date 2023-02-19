@@ -1,5 +1,3 @@
-
-
 .App {
   text-align: center;
 }
@@ -21,9 +19,20 @@
   color: white;
 }
 
-.trial{
-  position:relative;
-  left: 
+.button{
+  margin-top: 20px;
+  background-color: aquamarine;
+  font-size: 20px;
+  padding: 6px 12px;
+  border-radius: 15px;
+}
+
+.fakebutton{
+  margin-top: 20px;
+  opacity: 0;
+  font-size: 20px;
+  padding: 6px 12px;
+  border-radius: 15px;
 }
 
 

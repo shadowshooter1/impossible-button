@@ -1,32 +1,23 @@
-import logo from './logo.svg';
-import {useState} from 'react';
+
+import {useState,useRef,useEffect} from 'react';
 import './App.css';
+import 'animate.css';
 
 
 function App() {
-  const [isHovering, setIsHovering] = useState(false);
-  const [Toogle, setToogle] = useState(false);
+ 
   const [Rand, setRand] = useState(0);
+  
+  const but = {
+    position:Rand>0?'absolute':"relative",
+    top: Rand>0?`${Math.random() * 80}%` : "0px",
+    left:Rand>0?`${Math.random() * 80}%`: "0px"
+    }
 
-  const trial = {
-  position:'relative',
-  left:"0px",
-  backgroundColor:"red"
-  }
-  const trial2 = {
-    position:'relative',
-    right:Rand+"px",
-    backgroundColor:"red"
-  }
   const handleMouseOver = (event) => {
-    setIsHovering(true); 
-    setRand(Math.floor(Math.random() * (400 - 50 + 1) ) + 50);
-    console.log(Rand)
-    setToogle(!Toogle)
+       setRand(Rand+1)
   };
- // const handleMouseOut = () => {
- //   setIsHovering(false);
-  //};
+  
   return (
     <div className="App">
       <header className="App-header">
@@ -34,16 +25,16 @@ function App() {
       <div>
         <label>
           
-    Username:</label>
+    Username: </label>
           <input type="text" name="username" />
         </div>
         <div>
         <label>
-    Password:</label>
+    Password: </label>
           <input type="text" name="username" />
         </div>
-          <input style={trial2} onMouseEnter={handleMouseOver} /*onMouseLeave={handleMouseOut} */ type="submit" value="Submit" />
-
+        <input style={but} className={"button "} onMouseEnter={handleMouseOver}  type="submit" value="Submit" />
+        {Rand>0? <div className="fakebutton"> Submit</div> : ""}
 </form>
       </header>
     </div>
