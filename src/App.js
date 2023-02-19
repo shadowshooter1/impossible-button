@@ -1,7 +1,7 @@
 
 import {useState,useRef,useEffect} from 'react';
 import './App.css';
-import 'animate.css';
+
 
 
 function App() {
